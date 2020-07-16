@@ -32,31 +32,31 @@ console.log(furniture);
 
 
 // Constructor Calculator Program
-function brickCalculator(BuildinSize) {
+function brickCalculator(BuildingSize) {
     var firstToTen = 15;
     var elevenToTwenty = 12;
     var TwentyOneToAll = 10;
-    if (BuildinSize < 0 || BuildinSize == 0) {
+    if (BuildingSize < 0 || BuildingSize == 0) {
         console.log("Building Size cannot be negative or zero");
     } else {
-        if (BuildinSize <= 10) {
-            var totalBricks = BuildinSize * 1000;
-        } else if (BuildinSize <= 20) {
+        if (BuildingSize <= 10) {
+            var totalBricks = BuildingSize * 1000;
+        } else if (BuildingSize <= 20) {
             firstToTen = firstToTen * 10;
-            elevenToTwenty = BuildinSize - 10;
-            BuildinSize = firstToTen + (elevenToTwenty * 12);
-            var totalBricks = BuildinSize * 1000;//this is output
+            elevenToTwenty = BuildingSize - 10;
+            BuildingSize = firstToTen + (elevenToTwenty * 12);
+            var totalBricks = BuildingSize * 1000;//this is output
         } else {
             firstToTen = firstToTen * 10;
             elevenToTwenty = elevenToTwenty * 10;
-            TwentyOneToAll = BuildinSize - 20;
-            BuildinSize = firstToTen + elevenToTwenty + (TwentyOneToAll * 10);
-            var totalBricks = BuildinSize * 1000;
+            TwentyOneToAll = BuildingSize - 20;
+            BuildingSize = firstToTen + elevenToTwenty + (TwentyOneToAll * 10);
+            var totalBricks = BuildingSize * 1000;
         }
     }
     return totalBricks;
 }
-var building = brickCalculator(80);
+var building = brickCalculator(25);
 console.log(building);
 
 
