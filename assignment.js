@@ -27,7 +27,7 @@ function woodCalculator(chair, table, bed) {
     }
     return totalWood;
 }
-var totalFurniture = woodCalculator(9, 2, 2);
+var totalFurniture = woodCalculator(9, 8, 5);
 console.log(totalFurniture);
 
 
@@ -57,17 +57,21 @@ function brickCalculator(BuildingSize) {
     }
     return totalBricks;
 }
-var building = brickCalculator(24);
+var building = brickCalculator(27);
 console.log(building);
 
 
 //find smallest friend name from friend list
 function tinyFriend(friend) {
-    var min = friend[0];
-    for (var i = 0; i < friend.length; i++) {
-        var element = friend[i];
-        if (element.length < min.length) {
-            min = element;
+    if (!friend.length) {
+        console.log("Alas! Maybe it's your mistake. Empty value never smallest or biggest.");
+    } else {
+        var min = friend[0];
+        for (var i = 0; i < friend.length; i++) {
+            var element = friend[i];
+            if (element.length < min.length) {
+                min = element;
+            }
         }
     }
     return min;
