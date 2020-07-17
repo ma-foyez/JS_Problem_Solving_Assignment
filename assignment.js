@@ -9,8 +9,8 @@ function feetToMile(feet) {
     }
     return mile;
 }
-var result = feetToMile(20);
-console.log(result);
+var totalMile = feetToMile(20);
+console.log(totalMile);
 
 
 
@@ -27,8 +27,8 @@ function woodCalculator(chair, table, bed) {
     }
     return totalWood;
 }
-var furniture = woodCalculator(9, 2, 2);
-console.log(furniture);
+var totalFurniture = woodCalculator(9, 2, 2);
+console.log(totalFurniture);
 
 
 // Constructor Calculator Program
@@ -36,38 +36,39 @@ function brickCalculator(BuildingSize) {
     var firstToTen = 15;
     var elevenToTwenty = 12;
     var TwentyOneToAll = 10;
-    if (BuildingSize < 0 || BuildingSize == 0) {
-        console.log("Building Size cannot be negative or zero");
+    if (BuildingSize <= 0) {
+        console.log("Building Size cannot be negative or zero"); //when building size less then or equal to zero
     } else {
         if (BuildingSize <= 10) {
-            var totalBricks = BuildingSize * 1000;
+            firstToTen = BuildingSize * firstToTen;
+            var totalBricks = firstToTen * 1000;
         } else if (BuildingSize <= 20) {
             firstToTen = firstToTen * 10;
             elevenToTwenty = BuildingSize - 10;
-            BuildingSize = firstToTen + (elevenToTwenty * 12);
-            var totalBricks = BuildingSize * 1000;//this is output
+            var totalBuildingSize = firstToTen + (elevenToTwenty * 12);
+            var totalBricks = totalBuildingSize * 1000;
         } else {
             firstToTen = firstToTen * 10;
             elevenToTwenty = elevenToTwenty * 10;
             TwentyOneToAll = BuildingSize - 20;
-            BuildingSize = firstToTen + elevenToTwenty + (TwentyOneToAll * 10);
-            var totalBricks = BuildingSize * 1000;
+            var totalBuildingSize = firstToTen + elevenToTwenty + (TwentyOneToAll * 10);
+            var totalBricks = totalBuildingSize * 1000;
         }
     }
     return totalBricks;
 }
-var building = brickCalculator(25);
+var building = brickCalculator(24);
 console.log(building);
 
 
-//find smallest friend name from friend circle
+//find smallest friend name from friend list
 function tinyFriend(friend) {
     var min = friend[0];
     for (var i = 0; i < friend.length; i++) {
         var element = friend[i];
-            if (element.length < min.length) {
-                min = element;
-            }
+        if (element.length < min.length) {
+            min = element;
+        }
     }
     return min;
 }
