@@ -69,13 +69,17 @@ function tinyFriend(friend) {
         var min = friend[0];
         for (var i = 0; i < friend.length; i++) {
             var element = friend[i];
-            if (element.length < min.length) {
-                min = element;
+            if (!element.length) {
+                console.log('Sorry! You entered a blank element in your friend list. Please check & try again');
+            } else {
+                if (element.length < min.length) {
+                    min = element;
+                }
             }
         }
     }
     return min;
 }
-var Friends = ['Sakib', 'saki', 'Seikh', 'Fayez'];
+var Friends = ['Shahedul', 'saki', 'Seikh', 'Fayez'];
 var tinyFriend = tinyFriend(Friends);
 console.log(tinyFriend);
